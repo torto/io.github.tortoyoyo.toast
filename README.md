@@ -1,32 +1,42 @@
 # io.github.tortoyoyo.toast
 
-## Download Cordova
+## Download Cordova - CordovaCli
 
 * cordova plugin add io.github.tortoyoyo.toast
 
-## Plugman
+## Plugman 
 
-> plugman install --platform android --project /home/user/project/platforms/android/ --plugin /home/user/project/plugins/io.github.tortoyoyo.toast/ --plugins_dir /home/user/project/plugins/
+`$ plugman install --platform android --project /home/project/platforms/android/ --plugin /home/plugins/io.github.tortoyoyo.toast/ --plugins_dir /home/project/plugins/`
 
-> plugman install --platform firefoxos --project /home/user/project/platforms/firefoxos/ --plugin /home/user/project/plugins/io.github.tortoyoyo.toast/ --plugins_dir /home/user/project/plugins/
+`$ plugman install --platform firefoxos --project /home/project/platforms/firefoxos/ --plugin /home/plugins/io.github.tortoyoyo.toast/ --plugins_dir /home/project/plugins/`
 
 ## Metodos
 
-### criarToast
+### show()
 
 Create a Toast
 
-navigator.toast.criarToast(message, onSucess, onError, opcoes);
+```javascript
+navigator.toast.show(message, onSucess, onError, options);
+```
 
 - **message:** Message (String)
-- **opcões:**
+- **options:**
 
- - duration: duration toast Values: 0 or 1 (int)
- - dir : The text direction of the notification; it can be auto, ltr, or rtl.
- - lang: Specify the lang used within the notification. This string must be a valid BCP 47 language tag.
- - body: A string representing any extra content to display within the notification.
- - tag: An ID for a given notification that allows the developer to retrieve, replace, or remove the notification as necessary.
- - icon: The URL of an image to be used as an icon by the notification.
- - data: User-defined data field.
+ - duration: duration toast, 1-LONG / 0-SHORT - Values: 0 or 1 (int) (default: 0)
 
- **Obs:** value duration is required in Android.
+#### Example
+
+```javascript
+function onSuccess(success) {
+    console.log('Success: ' + success);
+}
+
+function onError(error) {
+    console.log('Error:' error);
+}
+
+navigator.toast.show('FirefoxOS and Android toast!', onSuccess, onError, {
+    duration: 1
+});
+```

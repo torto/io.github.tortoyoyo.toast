@@ -2,15 +2,15 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="io.github.tortoyoyo.toast"
-    version="0.0.3">
+    version="0.0.7">
     <name>Toast</name>
     <description>Cordova Toast Plugin</description>
     <license>Apache 2.0</license>
     <keywords>cordova,toast</keywords>
-    <repo></repo>
-    <issue></issue>
+    <repo>https://github.com/tortoyoyo/io.github.tortoyoyo.toast</repo>
+    <issue>https://github.com/tortoyoyo/io.github.tortoyoyo.toast/issues</issue>
 
-    <js-module src="www/toast.js" name="toast">
+    <js-module src="www/ToastProxy.js" name="toast">
         <merges target="navigator.toast" />
     </js-module>
 
@@ -22,7 +22,10 @@
             </feature>
             <permission name="desktop-notification" description="Needed for creating system notifications."/>
         </config-file>
-        <js-module src="src/firefoxos/toast.js" name="Toast">
+        <asset src="www/firefoxos/toast.css" target="css/toast.css" />
+        <asset src="www/firefoxos/gradient.png" target="img/gradient.png" />
+        <asset src="www/firefoxos/pattern.png" target="img/pattern.png" />
+        <js-module src="src/firefoxos/Toast.js" name="Toast">
           <runs />
         </js-module>
     </platform>
