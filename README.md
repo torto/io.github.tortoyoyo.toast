@@ -10,7 +10,7 @@
 
 `$ plugman install --platform firefoxos --project /home/project/platforms/firefoxos/ --plugin /home/plugins/io.github.tortoyoyo.toast/ --plugins_dir /home/project/plugins/`
 
-## Metodos
+## Methods
 
 ### show()
 
@@ -22,8 +22,10 @@ navigator.toast.show(message, onSucess, onError, options);
 
 - **message:** Message (String)
 - **options:**
-
  - duration: duration toast, 1-LONG / 0-SHORT - Values: 0 or 1 (int) (default: 0)
+ - **onSuccess:** function success
+ - parameter: message thats ok. (string)
+- **onError:** function error
 
 #### Example
 
